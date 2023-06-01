@@ -2,6 +2,19 @@ import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Stack,
 import { Component } from "react";
 
 class SessionDialog extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: "",
+            type: -1,
+            date: "",
+            time: "",
+            password: "",
+            team: [],
+            criteria: 0,
+            host: 1
+        }
+    }
     render() {
         const open = this.props.open;
         const handleClose = this.props.handleClose;
@@ -18,7 +31,18 @@ class SessionDialog extends Component {
                 </DialogTitle>
                 <DialogContent>
                     <Grid container>
-                        <Grid sm={6} xs={12} paddingRight={4}>
+                        <Grid sm={6} xs={12} paddingRight={2}>
+                            <TextField
+                                autoFocus
+                                margin="dense"
+                                id="title"
+                                label="Session TItle"
+                                type="text"
+                                fullWidth
+                                variant="outlined"
+                            />
+                        </Grid>
+                        <Grid sm={6} xs={12} paddingLeft={2}>
                             <TextField
                                 autoFocus
                                 margin="dense"
@@ -29,50 +53,43 @@ class SessionDialog extends Component {
                                 variant="outlined"
                             />
                         </Grid>
-                        <Grid sm={6} xs={12}>
+                        <Grid sm={6} xs={12} paddingRight={2}>
                             <TextField
                                 autoFocus
                                 margin="dense"
                                 id="name"
                                 label="Email Address"
                                 type="email"
-                                variant="standard"
+                                fullWidth
+                                variant="outlined"
                             />
                         </Grid>
-                        <Grid sm={6} xs={12}>
+                        <Grid sm={6} xs={12} paddingLeft={2}>
                             <TextField
                                 autoFocus
                                 margin="dense"
                                 id="name"
                                 label="Email Address"
                                 type="email"
-                                variant="standard"
+                                fullWidth
+                                variant="outlined"
                             />
                         </Grid>
-                        <Grid sm={6} xs={12}>
-                            <TextField
-                                autoFocus
-                                margin="dense"
-                                id="name"
-                                label="Email Address"
-                                type="email"
-                                variant="standard"
-                            />
-                        </Grid>
-                        <Grid sm={6} xs={12}>
-                            <Stack direction="row" spacing={2}>
-                                <Button fullWidth>Import Team</Button>
-                                <Button fullWidth>Select Criteria</Button>
+                        <Grid sm={6} xs={12} paddingRight={2}>
+                            <Stack spacing={1}>
+                                <Button variant="contained" sx={{marginTop: 1}}>Import Team</Button>
+                                <Button variant="contained">Select Criteria</Button>
                             </Stack>
                         </Grid>
-                        <Grid sm={6} xs={12}>
+                        <Grid sm={6} xs={12} paddingLeft={2}>
                             <TextField
                                 autoFocus
                                 margin="dense"
                                 id="name"
                                 label="Email Address"
                                 type="email"
-                                variant="standard"
+                                fullWidth
+                                variant="outlined"
                             />
                         </Grid>
                     </Grid>
