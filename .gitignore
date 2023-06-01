@@ -1,0 +1,5 @@
+flicker_env
+__pycache__
+migrations
+node_modules
+db.sqlite3
